@@ -1,0 +1,493 @@
+/* =========================================
+   KIDSS1Y7S - GUESS THE ANIMAL
+   Complete style.css
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #ff9800;
+  --orange-dark: #ef6c00;
+  --yellow: #fff3b0;
+  --purple: #7e57c2;
+  --green: #43a047;
+  --red: #e53935;
+  --text: #303044;
+  --white: #ffffff;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 18px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #fff8d6, #ffe0f0, #d9f4ff);
+}
+
+/* Main app area */
+.container,
+.app,
+.game-container,
+main {
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header and brand */
+header,
+.game-header {
+  text-align: center;
+  margin: 0 auto 18px;
+}
+
+h1 {
+  margin: 8px 0;
+  color: #f57c00;
+  font-size: clamp(27px, 6vw, 42px);
+  font-weight: 900;
+  text-align: center;
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Common card appearance */
+#startScreen,
+#gameScreen,
+#gameOverScreen {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 28px);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 35px rgba(76, 50, 100, 0.14);
+  text-align: center;
+}
+
+/* Screen visibility */
+.hidden {
+  display: none !important;
+}
+
+/* Start and game-over headings */
+#startScreen h2,
+#gameOverScreen h2 {
+  color: #7e57c2;
+  font-size: clamp(24px, 5vw, 34px);
+  margin-top: 8px;
+}
+
+/* General buttons */
+button {
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#startButton,
+#playAgainButton,
+#homeButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 52px;
+  margin: 8px 5px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff9800, #f4511e);
+  box-shadow: 0 5px 0 #d96515;
+  font-size: 17px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+#startButton:active,
+#playAgainButton:active,
+#homeButton:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #d96515;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Score, lives and level information */
+.stats,
+.game-stats,
+.score-board,
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto 16px;
+}
+
+.stats > *,
+.game-stats > *,
+.score-board > *,
+.stats-container > * {
+  padding: 8px 12px;
+  border-radius: 13px;
+  background: #fff3cd;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Question counter */
+#questionCounter {
+  margin: 12px 0;
+  color: #6a1b9a;
+  font-size: 19px;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Animal picture area */
+.animal-container,
+.animal-image-container,
+#animalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 12px auto;
+}
+
+#animalImage {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  margin: 10px auto 18px;
+  object-fit: contain;
+  border: 4px solid #ffe082;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(255, 152, 0, 0.13);
+}
+
+/* =========================================
+   FOUR ANSWER OPTIONS - SINGLE STYLE RULE
+   ========================================= */
+
+#answerButtons,
+.answer-buttons,
+.options {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-auto-rows: minmax(58px, auto);
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 16px auto !important;
+  padding: 0 !important;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+/* Each answer is one complete button */
+#answerButtons .answer-button,
+.answer-buttons .answer-button,
+.options .answer-button {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 58px !important;
+  margin: 0 !important;
+  padding: 12px 8px !important;
+  border: 3px solid #ffb74d !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, #fff8e1, #ffe0b2) !important;
+  color: #4e342e !important;
+  font-family: inherit !important;
+  font-size: clamp(14px, 3.8vw, 18px) !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  box-shadow: 0 4px 0 #f5a623;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#answerButtons .answer-button:hover {
+  background: #fff0a8 !important;
+  transform: translateY(-2px);
+}
+
+#answerButtons .answer-button:active {
+  transform: scale(0.97);
+}
+
+/* Correct and incorrect answers */
+#answerButtons .answer-button.correct {
+  background: #c8f7d0 !important;
+  border-color: #2e9d50 !important;
+  box-shadow: 0 4px 0 #268443;
+  color: #14532d !important;
+}
+
+#answerButtons .answer-button.wrong {
+  background: #ffd5d5 !important;
+  border-color: #e53935 !important;
+  box-shadow: 0 4px 0 #c62828;
+  color: #8e2020 !important;
+}
+
+#answerButtons .answer-button:disabled {
+  opacity: 1 !important;
+  cursor: default;
+}
+
+/* Feedback message */
+#feedback {
+  display: block;
+  min-height: 28px;
+  margin: 12px auto;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#feedback.correct {
+  color: #238636;
+}
+
+#feedback.wrong {
+  color: #d32f2f;
+}
+
+/* Progress bar */
+.progress-container,
+.progress-track {
+  width: 100%;
+  height: 12px;
+  margin: 12px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eeeeee;
+}
+
+#progressBar {
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #66bb6a, #ffee58, #ff9800);
+  transition: width 0.3s ease;
+}
+
+/* Game messages */
+#gameMessage {
+  margin: 12px auto;
+  color: #6a1b9a;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Game over screen */
+#gameOverIcon {
+  margin: 8px auto;
+  font-size: 60px;
+}
+
+#finalScore,
+#finalBestScore,
+#bestScore {
+  color: #ef6c00;
+  font-weight: 900;
+}
+
+/* Animal image celebration */
+.happyPop {
+  animation: happyPop 0.45s ease;
+}
+
+@keyframes happyPop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.07) rotate(2deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Celebration animation */
+.celebration-confetti {
+  animation: confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(650deg);
+    opacity: 0;
+  }
+}
+
+/* Mobile screen */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #startScreen,
+  #gameScreen,
+  #gameOverScreen {
+    padding: 15px 12px;
+    border-radius: 20px;
+  }
+
+  #animalImage {
+    height: 215px;
+    max-width: 260px;
+  }
+
+  #answerButtons,
+  .answer-buttons,
+  .options {
+    gap: 10px !important;
+  }
+
+  #answerButtons .answer-button,
+  .answer-buttons .answer-button,
+  .options .answer-button {
+    min-height: 54px !important;
+    padding: 10px 5px !important;
+  }
+}
+/* =========================================
+   SUPER STAR CELEBRATIONS + MOBILE FIX
+   ========================================= */
+
+#animalImage.happyPop {
+  animation: happyPop 0.45s ease;
+}
+
+#animalImage.sadShake {
+  animation: sadShake 0.45s ease;
+}
+
+@keyframes sadShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-9px); }
+  40%, 80% { transform: translateX(9px); }
+}
+
+#gameOverScreen.super-star-screen {
+  border: 4px solid #ffca28;
+  background: linear-gradient(135deg, #fffde7, #ffe0f7, #e1f5fe);
+  animation: starScreenIn 0.6s ease;
+}
+
+#gameOverScreen.super-star-screen #gameOverIcon {
+  font-size: clamp(70px, 18vw, 110px);
+  animation: trophyBounce 0.9s ease infinite alternate;
+}
+
+#gameOverScreen.super-star-screen #gameOverTitle {
+  color: #ef6c00;
+  font-size: clamp(28px, 7vw, 42px);
+  text-shadow: 1px 2px 0 #ffe082;
+}
+
+@keyframes trophyBounce {
+  from { transform: translateY(0) rotate(-5deg) scale(1); }
+  to { transform: translateY(-10px) rotate(5deg) scale(1.08); }
+}
+
+@keyframes starScreenIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Keep the game neat on phones */
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  #gameScreen,
+  #startScreen,
+  #gameOverScreen {
+    width: 100%;
+    padding: 14px 10px;
+    border-radius: 20px;
+  }
+
+  #animalImage {
+    width: 100%;
+    max-width: 260px;
+    height: 220px;
+    object-fit: contain;
+  }
+
+  #answerButtons {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 9px !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #answerButtons .answer-button {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 54px !important;
+    padding: 9px 5px !important;
+    font-size: 15px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .stats {
+    gap: 6px;
+  }
+
+  .stats > * {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #animalImage.happyPop,
+  #animalImage.sadShake,
+  #gameOverScreen.super-star-screen,
+  #gameOverScreen.super-star-screen #gameOverIcon {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+}

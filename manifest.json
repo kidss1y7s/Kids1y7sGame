@@ -1,0 +1,21 @@
+﻿{
+  "id": "./",
+  "name": "Kids1y7s Animal Quiz",
+  "short_name": "Animal Quiz",
+  "description": "A fun animal guessing game for children.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff8ef",
+  "theme_color": "#ff8b35",
+  "icons": [
+    {
+      "src": "./images/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
+

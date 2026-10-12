@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kids1y7s - Guess the Animal</title>
+
+  <meta name="theme-color" content="#ff9800">
+  <meta name="description" content="A fun animal guessing game for kids.">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="manifest" href="./manifest.json">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- HEADER -->
+    <header class="game-header">
+      <h1>🐾 Kids1y7s</h1>
+      <p>GUESS THE ANIMAL!</p>
+    </header>
+
+    <!-- START SCREEN -->
+    <section id="startScreen">
+
+      <h2>🦁 Animal Quiz Adventure!</h2>
+
+      <p>
+        Look at the animal picture and choose the correct answer.
+      </p>
+
+      <p>⭐ Earn points and become a Super Star!</p>
+
+      <p>
+        Best Score:
+        <strong id="bestScore">0</strong>
+      </p>
+
+      <button id="startButton" type="button">
+        🎮 START GAME
+      </button>
+
+      <p id="gameMessage">
+        Loading animal pictures...
+      </p>
+
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="gameScreen" class="hidden">
+
+      <!-- SCOREBOARD -->
+      <div class="stats">
+
+        <div>
+          ⭐ Score:
+          <strong id="score">0</strong>
+        </div>
+
+        <div>
+          ❤️ Lives:
+          <strong id="lives">❤️❤️❤️</strong>
+        </div>
+
+        <div>
+          🏆 Level:
+          <strong id="level">1</strong>
+        </div>
+
+      </div>
+
+      <!-- PROGRESS -->
+      <div class="progress-container">
+        <div id="progressBar"></div>
+      </div>
+
+      <!-- QUESTION NUMBER -->
+      <h2 id="questionCounter">Animal 1 / 10</h2>
+
+      <!-- ANIMAL IMAGE -->
+      <div class="animal-container">
+        <img
+          id="animalImage"
+          src="./images/dog.png"
+          alt="Guess the animal"
+        >
+      </div>
+
+      <!-- QUESTION -->
+      <p id="feedback" class="feedback">
+        Which animal is this? 🤔
+      </p>
+
+      <!-- FOUR ANSWER BUTTONS ARE CREATED BY script.js -->
+      <div
+        id="answerButtons"
+        class="answer-buttons"
+        aria-label="Choose the animal"
+      ></div>
+
+    </section>
+
+    <!-- GAME OVER SCREEN -->
+    <section id="gameOverScreen" class="hidden">
+
+      <div id="gameOverIcon">🏆</div>
+
+      <h2 id="gameOverTitle">SUPER STAR!</h2>
+
+      <p id="gameOverMessage">
+        Great job! Keep learning about animals.
+      </p>
+
+      <p>
+        Your Score:
+        <strong id="finalScore">0</strong>
+      </p>
+
+      <p>
+        Best Score:
+        <strong id="finalBestScore">0</strong>
+      </p>
+
+      <button id="playAgainButton" type="button">
+        🔄 PLAY AGAIN
+      </button>
+
+      <button id="homeButton" type="button">
+        🏠 HOME
+      </button>
+
+    </section>
+
+  </main>
+
+  <!-- GAME JAVASCRIPT -->
+  <script src="./script.js"></script>
+
+</body>
+</html>
